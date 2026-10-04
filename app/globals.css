@@ -1,0 +1,401 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Manrope:wght@400;600;800&display=swap");
+body {
+  font-family: Manrope, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+:root {
+  --bg: #05070d;
+  --fg: #e8eaee;
+  --glass: rgba(20, 28, 48, 0.6);
+}
+[data-theme="light"] {
+  --bg: #f3f5f8;
+  --fg: #101521;
+  --glass: rgba(255, 255, 255, 0.8);
+}
+h1,
+h2,
+h3 {
+  font-family: Fraunces, serif;
+}
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(150, 170, 200, 0.25);
+  border-radius: 1rem;
+}
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 20%, #fff, transparent),
+    radial-gradient(2px 2px at 50% 80%, #9cf, transparent),
+    radial-gradient(1px 1px at 85% 65%, #fff, transparent),
+    radial-gradient(1px 1px at 10% 75%, #fff, transparent);
+  background-size: 300px 300px;
+  animation: drift 120s linear infinite;
+}
+[data-theme="light"] .stars {
+  opacity: 0.15;
+}
+@keyframes drift {
+  to {
+    background-position: 300px 600px;
+  }
+}
+@keyframes pulse2 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(95, 212, 232, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 18px transparent;
+  }
+}
+.pin {
+  animation: pulse2 2s infinite;
+}
+@keyframes beam {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.beam {
+  stroke-dasharray: 300;
+  animation: beam 1.6s ease-out forwards;
+}
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.bar {
+  animation: wave 1s infinite;
+  transform-origin: center;
+}
+:focus-visible {
+  outline: 3px solid #5fd4e8;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes fadeA {
+  0%,
+  35% {
+    opacity: 1;
+  }
+  65%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeB {
+  0%,
+  35% {
+    opacity: 0;
+  }
+  65%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stage {
+  position: absolute;
+  right: 6vw;
+  top: 50%;
+  transform: translateY(-46%);
+  width: min(32vw, 50vh, 440px);
+  aspect-ratio: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+.stage > div {
+  position: absolute;
+  border-radius: 50%;
+}
+.stage .world {
+  inset: 0;
+  animation: fadeA 16s ease-in-out infinite alternate;
+}
+.stage .mars {
+  background: radial-gradient(circle at 35% 30%, #f09062, #b24a22 60%, #3a140a);
+  box-shadow:
+    0 0 100px rgba(217, 98, 43, 0.35),
+    inset -28px -28px 70px rgba(0, 0, 0, 0.5);
+}
+.stage .moon {
+  background: radial-gradient(circle at 35% 30%, #eceef2, #8a8d94 60%, #2b2d33);
+  box-shadow:
+    0 0 100px rgba(200, 210, 230, 0.22),
+    inset -28px -28px 70px rgba(0, 0, 0, 0.6);
+  animation-name: fadeB;
+}
+.stage .haze {
+  inset: -4%;
+  background: radial-gradient(
+    circle,
+    transparent 62%,
+    rgba(217, 98, 43, 0.3) 70%,
+    transparent 76%
+  );
+  animation: fadeA 16s ease-in-out infinite alternate;
+}
+.stage .ring {
+  inset: -12%;
+  border: 1px solid rgba(95, 212, 232, 0.3);
+  animation: spin 90s linear infinite;
+}
+@media (max-width: 767px) {
+  .stage {
+    width: 72vw;
+    right: -18vw;
+    top: 30%;
+    opacity: 0.45;
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.unlock {
+  animation: pop 0.6s ease-out;
+}
+
+.starcanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+[data-theme="light"] .starcanvas {
+  filter: invert(1);
+  opacity: 0.3;
+}
+.glass-nav {
+  background: rgba(10, 16, 30, 0.28);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(150, 170, 200, 0.28);
+  border-radius: 1rem;
+}
+[data-theme="light"] .glass-nav {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s,
+    transform 0.6s;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.dust {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    linear-gradient(to top, rgba(217, 98, 43, 0.14), transparent 55%),
+    radial-gradient(2px 2px at 20% 60%, rgba(240, 150, 100, 0.5), transparent),
+    radial-gradient(
+      1.5px 1.5px at 60% 40%,
+      rgba(240, 150, 100, 0.4),
+      transparent
+    ),
+    radial-gradient(2px 2px at 80% 75%, rgba(240, 150, 100, 0.5), transparent);
+  background-size:
+    auto,
+    260px 260px,
+    260px 260px,
+    260px 260px;
+  animation: dust 40s linear infinite;
+}
+@keyframes dust {
+  to {
+    background-position:
+      0 0,
+      600px 0,
+      -600px 0,
+      400px 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  overflow: hidden;
+}
+.confetti i {
+  position: absolute;
+  top: -12px;
+  border-radius: 2px;
+  animation: fall 2.4s ease-in forwards;
+}
+@keyframes fall {
+  0% {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), 105vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .confetti {
+    display: none;
+  }
+}
+.planet-in {
+  animation:
+    planetIn 0.9s ease-out,
+    floaty 8s ease-in-out 0.9s infinite;
+}
+@keyframes planetIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.surface {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat-x;
+  background-size: 600px 100%;
+  animation: roll 70s linear infinite;
+}
+@keyframes roll {
+  to {
+    background-position-x: -600px;
+  }
+}
+.surface.moon {
+  background-image:
+    radial-gradient(
+      ellipse 36px 36px at 15% 30%,
+      rgba(0, 0, 0, 0.28) 60%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 60px 60px at 45% 62%,
+      rgba(0, 0, 0, 0.24) 60%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 28px 28px at 75% 25%,
+      rgba(0, 0, 0, 0.26) 60%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 48px 48px at 86% 72%,
+      rgba(0, 0, 0, 0.26) 60%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 22px 22px at 30% 85%,
+      rgba(0, 0, 0, 0.22) 60%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 90px 40px at 60% 40%,
+      rgba(60, 60, 70, 0.22),
+      transparent 100%
+    );
+}
+.surface.mars {
+  background-image:
+    radial-gradient(
+      ellipse 120px 50px at 20% 35%,
+      rgba(60, 20, 8, 0.35),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 150px 60px at 62% 65%,
+      rgba(60, 20, 8, 0.3),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 90px 30px at 85% 30%,
+      rgba(255, 190, 140, 0.22),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 70px 26px at 40% 82%,
+      rgba(255, 190, 140, 0.2),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 24px 24px at 50% 20%,
+      rgba(0, 0, 0, 0.2) 60%,
+      transparent 100%
+    );
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    transparent 25%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+@media (prefers-reduced-motion: reduce) {
+  .planet-in {
+    animation: none;
+  }
+}

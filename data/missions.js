@@ -1,0 +1,310 @@
+// Facts follow NASA mission pages. Verify against sources before publishing; swap `image` for NASA image URLs with credit.
+export const missions = [
+  {
+    id: "apollo11-retroreflector",
+    nasaId: "AS11-40-5948",
+    imageQuery: "Apollo 11 Aldrin laser ranging retroreflector EASEP",
+    name: "Apollo 11 Retroreflector",
+    planet: "Moon",
+    type: "Instrument",
+    status: "Passive, still used",
+    pin: { x: 62, y: 48, place: "Sea of Tranquility" },
+    image: "",
+    shortDescription:
+      "A panel of mirrors left on the Moon that scientists still aim lasers at.",
+    hook: "I have no engine and no battery. I only reflect.",
+    story: [
+      "I was built to send light home.",
+      "I am the Lunar Laser Ranging Retroreflector. Astronauts Neil Armstrong and Buzz Aldrin placed me on the Moon on July 21, 1969.",
+      "I am a panel of special mirrors that bounce light straight back to where it came from.",
+      "I need no power. I just sit here and wait for the next laser.",
+    ],
+    facts: [
+      {
+        t: "Measuring distance",
+        d: "Scientists time how long a laser takes to go to the Moon and back. Light speed is known, so time gives distance.",
+      },
+      {
+        t: "Still working",
+        d: "Observatories on Earth still bounce lasers off retroreflectors left on the Moon.",
+      },
+    ],
+    timeline: [
+      [
+        "July 21, 1969",
+        "Placed on the surface",
+        "Apollo 11 astronauts set me up near their lander.",
+      ],
+      [
+        "Since then",
+        "Laser measurements",
+        "Observatories keep measuring the Earth–Moon distance.",
+      ],
+    ],
+    components: [
+      {
+        n: "Corner mirrors",
+        d: "Each one reflects light back along the path it came from, like a bike reflector.",
+      },
+      { n: "Panel", d: "Holds the array of mirrors pointed at Earth." },
+      {
+        n: "No electronics",
+        d: "Nothing to break, so it can keep working for decades.",
+      },
+    ],
+    quiz: [
+      {
+        q: "Why can the retroreflector work without power?",
+        o: [
+          "It has solar panels",
+          "It only reflects light",
+          "It has a battery",
+          "It uses a radio",
+        ],
+        a: 1,
+        e: "It is just mirrors, so it simply bounces light back.",
+      },
+      {
+        q: "Who placed it on the Moon?",
+        o: ["Apollo 11 astronauts", "Spirit", "InSight", "Surveyor 3"],
+        a: 0,
+        e: "Armstrong and Aldrin deployed it in July 1969.",
+      },
+      {
+        q: "What do scientists measure with the retroreflector?",
+        o: [
+          "Moon temperature",
+          "Distance to the Moon",
+          "Wind speed",
+          "Moonquakes",
+        ],
+        a: 1,
+        e: "They time laser round trips to find the Earth–Moon distance.",
+      },
+    ],
+    sources: [
+      "NASA – Apollo 11 Lunar Laser Ranging Experiment (nasa.gov)",
+      "Image AS11-40-5948: Apollo 11 crew / NASA (images.nasa.gov)",
+    ],
+    special: "laser",
+  },
+  {
+    id: "surveyor3",
+    nasaId: "AS12-48-7133",
+    name: "Surveyor 3",
+    planet: "Moon",
+    type: "Lander",
+    status: "Inactive",
+    pin: { x: 30, y: 55, place: "Oceanus Procellarum" },
+    image: "",
+    shortDescription: "A robot lander that astronauts later visited.",
+    hook: "Two humans walked up to me. I had been waiting.",
+    story: [
+      "I landed before humans did.",
+      "I am Surveyor 3. I touched down on the Moon on April 20, 1967, to check if the ground was safe for astronauts.",
+      "I had a camera and a small scoop to dig in the soil.",
+      "In November 1969, Apollo 12 astronauts walked to me and took parts of me back to Earth.",
+    ],
+    facts: [
+      {
+        t: "Testing the soil",
+        d: "My scoop showed the Moon's soil could hold the weight of a lander.",
+      },
+      {
+        t: "Visited by Apollo 12",
+        d: "Astronauts returned my camera so engineers could study how materials aged on the Moon.",
+      },
+    ],
+    timeline: [
+      ["April 20, 1967", "Landing", "Soft landing in a crater on the Moon."],
+      ["1967", "Soil tests and photos", "Camera and scoop sent data to Earth."],
+      [
+        "Nov 1969",
+        "Apollo 12 visit",
+        "Astronauts examined me and returned parts.",
+      ],
+    ],
+    components: [
+      {
+        n: "Camera",
+        d: "Took pictures of the surface and sent them to Earth.",
+      },
+      { n: "Soil scoop", d: "A small arm that dug and pressed the ground." },
+      { n: "Radio", d: "Sent pictures and data home." },
+    ],
+    quiz: [
+      {
+        q: "What did Apollo 12 astronauts do at Surveyor 3?",
+        o: [
+          "Launched it again",
+          "Took parts back to Earth",
+          "Buried it",
+          "Nothing",
+        ],
+        a: 1,
+        e: "They returned parts, including the camera.",
+      },
+      {
+        q: "Why was Surveyor 3 sent?",
+        o: [
+          "To find water",
+          "To check if the ground was safe to land on",
+          "To measure Mars",
+          "To carry astronauts",
+        ],
+        a: 1,
+        e: "It helped prepare for crewed landings.",
+      },
+      {
+        q: "Which later mission visited Surveyor 3?",
+        o: ["Apollo 11", "Apollo 12", "Spirit", "InSight"],
+        a: 1,
+        e: "Apollo 12 astronauts walked to Surveyor 3 in 1969.",
+      },
+    ],
+    sources: [
+      "NASA – Surveyor program (nasa.gov)",
+      "Image AS12-48-7133: Apollo 12 crew / NASA (images.nasa.gov)",
+    ],
+    special: "surveyor",
+  },
+  {
+    id: "spirit",
+    imageQuery: "Spirit rover Mars Exploration Rover",
+    name: "Spirit",
+    planet: "Mars",
+    type: "Rover",
+    status: "Inactive",
+    pin: { x: 40, y: 60, place: "Gusev Crater" },
+    image: "",
+    shortDescription: "A rover planned for 90 sols that kept going for years.",
+    hook: "They said 90 days. I said: not yet.",
+    story: [
+      "I was built to explore another world.",
+      "I am Spirit. I landed on Mars on January 4, 2004 in Gusev Crater.",
+      "My mission was planned for 90 sols. A sol is one Mars day, a little longer than an Earth day.",
+      "I kept driving for years and found signs that water once shaped my landing area.",
+    ],
+    facts: [
+      {
+        t: "Signs of water",
+        d: "My instruments found minerals that form with water in the Columbia Hills area.",
+      },
+      {
+        t: "Stuck in sand",
+        d: "In 2009 I got stuck in soft sand. NASA's last contact with me was in March 2010.",
+      },
+    ],
+    timeline: [
+      ["Jan 4, 2004", "Landing on Mars", "Gusev Crater."],
+      ["2004", "Planned mission ends (90 sols)", "I kept going."],
+      ["2009", "Stuck in sand", "Engineers tried many ways to free me."],
+      [
+        "March 22, 2010",
+        "Last communication",
+        "Mars winter starved my solar panels of light.",
+      ],
+      ["May 25, 2011", "Mission ended", "NASA ended recovery efforts."],
+    ],
+    components: [
+      { n: "Solar panels", d: "Make electricity from sunlight." },
+      { n: "Computer", d: "Decides how to move and what to do." },
+      { n: "Cameras and tools", d: "Study rocks and take pictures." },
+      { n: "Antenna", d: "Talks to Earth." },
+      { n: "Wheels", d: "Six wheels carry me over rocks." },
+    ],
+    quiz: [
+      {
+        q: "Which world did Spirit explore?",
+        o: ["Moon", "Mars", "Venus", "Jupiter"],
+        a: 1,
+        e: "Spirit explored Mars.",
+      },
+      {
+        q: "How long was Spirit's planned mission?",
+        o: ["90 sols", "10 years", "1 week", "1000 sols"],
+        a: 0,
+        e: "It was planned for 90 sols and lasted far longer.",
+      },
+      {
+        q: "What does a sol mean?",
+        o: ["A Mars day", "A rover wheel", "A Moon crater", "A year on Earth"],
+        a: 0,
+        e: "A sol is one day on Mars.",
+      },
+    ],
+    sources: ["NASA – Mars Exploration Rover Spirit (nasa.gov)"],
+    special: "compare",
+    compare: {
+      planned: "90 sols",
+      actual: "Over 2,200 sols (until March 2010)",
+    },
+  },
+  {
+    id: "insight",
+    imageQuery: "InSight lander Mars",
+    name: "InSight",
+    planet: "Mars",
+    type: "Lander",
+    status: "Inactive",
+    pin: { x: 62, y: 42, place: "Elysium Planitia" },
+    image: "",
+    shortDescription: "A lander that listened for marsquakes.",
+    hook: "I never moved. I only listened.",
+    story: [
+      "I was built to listen.",
+      "I am InSight. I landed on Mars on November 26, 2018.",
+      "I stayed in one place with a seismometer, an instrument that feels ground shaking.",
+      "I detected more than 1,300 marsquakes and helped scientists learn about the inside of Mars.",
+    ],
+    facts: [
+      {
+        t: "Seismology",
+        d: "Quake waves change as they pass through rock, so they reveal the crust, mantle and core.",
+      },
+      {
+        t: "Dusty panels",
+        d: "Dust built up on my solar panels, and in December 2022 NASA ended my mission.",
+      },
+    ],
+    timeline: [
+      ["Nov 26, 2018", "Landing", "Elysium Planitia."],
+      ["April 2019", "First marsquake detected", "SEIS felt the shaking."],
+      ["Dec 2022", "Mission ended", "Power ran low from dust."],
+    ],
+    components: [
+      { n: "SEIS seismometer", d: "Feels tiny ground motions." },
+      { n: "Solar panels", d: "Power the lander." },
+      { n: "Robotic arm", d: "Placed instruments on the ground." },
+      { n: "Antenna", d: "Sends data to Earth." },
+    ],
+    quiz: [
+      {
+        q: "What did InSight study?",
+        o: ["Marsquakes", "Moon dust", "Jupiter's storms", "Comets"],
+        a: 0,
+        e: "It measured shaking on Mars.",
+      },
+      {
+        q: "Did InSight drive around?",
+        o: ["Yes, far", "No, it stayed in place", "Only at night", "It flew"],
+        a: 1,
+        e: "InSight was a stationary lander.",
+      },
+      {
+        q: "What is a seismometer for?",
+        o: [
+          "Taking photos",
+          "Feeling ground shaking",
+          "Digging holes",
+          "Making power",
+        ],
+        a: 1,
+        e: "It senses tiny ground movements such as marsquakes.",
+      },
+    ],
+    sources: ["NASA – InSight Mars Lander (nasa.gov)"],
+    special: "seismic",
+  },
+];
+export const get = (id) => missions.find((m) => m.id === id);
