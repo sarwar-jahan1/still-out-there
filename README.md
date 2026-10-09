@@ -12,7 +12,6 @@ An interactive storytelling and STEM learning website (ages ~10–14) about inac
 - Md. Sarwar
 - Isfar Hosssian
 - Aktaruzzamman Rifat
-- Jumana
 
 ## Features
 - Cinematic hero (Mars → Moon fade, cursor depth, orbit ring) and animated star field
