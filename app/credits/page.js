@@ -1,3 +1,4 @@
-export default function Credits(){return(<section className="max-w-3xl mx-auto px-4 py-12 space-y-3"><h1 className="text-5xl font-extrabold">Credits</h1>
-<p>Mission facts are based on NASA mission pages (nasa.gov). Verify each fact before final submission.</p><p>Images: none bundled yet. Add NASA images with credit in data/missions.js.</p>
-<p>Narration: browser SpeechSynthesis. Laser and seismic graphics are original illustrations, not real recordings.</p><p>Ambient sound (speaker button) is generated in the browser with the Web Audio API. It is not a real recording from the Moon or Mars. No AI-generated images are used.</p><p>Team VU_Aphelion: Mome Ashrafe (Team Leader), Md. Sarwar, Isfar Hosssian, Aktaruzzamman Rifat.</p><p>Built with Next.js, React, Tailwind CSS, DaisyUI. This project is not endorsed by NASA.</p></section>);}
+"use client";
+import {useLang} from "@/components/LangProvider";
+export default function Credits(){const {t}=useLang();return(<section className="max-w-3xl mx-auto px-4 py-12 space-y-3"><h1 className="text-4xl sm:text-5xl font-extrabold">{t("cr.h")}</h1>
+{["cr.p1","cr.p2","cr.p3","cr.p4"].map(k=><p key={k}>{t(k)}</p>)}<p>{t("cr.team")}{t("team")}.</p><p>{t("cr.p5")}</p></section>);}

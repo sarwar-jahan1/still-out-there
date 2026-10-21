@@ -1,5 +1,5 @@
 @tailwind base;@tailwind components;@tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Manrope:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Manrope:wght@400;600;800&family=Hind+Siliguri:wght@400;600;700&display=swap');
 body{font-family:Manrope,sans-serif;background:var(--bg);color:var(--fg)}
 :root{--bg:#05070d;--fg:#e8eaee;--glass:rgba(20,28,48,.6)}
 [data-theme=light]{--bg:#f3f5f8;--fg:#101521;--glass:rgba(255,255,255,.8)}
@@ -60,8 +60,10 @@ background-size:300px 300px;animation:drift 120s linear infinite}
 html,body{overflow-x:hidden}
 img,svg,canvas{max-width:100%}
 @media(max-width:767px){
-.stage{position:relative;right:auto;top:auto;transform:none;opacity:1;width:min(58vw,250px);margin:4.5rem auto 1.5rem}
+.stage{position:relative;right:auto;top:auto;transform:none;opacity:1;width:min(58vw,250px);margin:4.5rem auto 3.5rem}
 }
 
 .stage{translate:calc(var(--mx,0)*18px) calc(var(--my,0)*18px);transition:translate .4s ease-out}
 .skip{position:absolute;left:-999px;top:8px;z-index:100;background:#5fd4e8;color:#000;padding:.5rem 1rem;border-radius:.5rem}.skip:focus{left:8px}
+
+[lang=bn] body,[lang=bn] h1,[lang=bn] h2,[lang=bn] h3,[lang=bn] .font-display{font-family:"Hind Siliguri","Noto Sans Bengali",sans-serif}

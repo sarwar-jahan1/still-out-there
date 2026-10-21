@@ -22,6 +22,7 @@ An interactive storytelling and STEM learning website (ages ~10–14) about inac
 - Special sections: laser to the Moon, Spirit planned-vs-actual, "Listen to Mars" (illustration only), Surveyor 3 → Apollo 12
 - Mission Check quiz with confetti, badges and progress saved in localStorage (no login)
 - Searchable/filterable mission archive, light/dark mode, responsive layout, reduced-motion support
+- **English / বাংলা toggle** in the navbar (UI + all four missions; Bangla text needs review by a Bangla speaker)
 - Optional generated ambient sound (not a real space recording)
 
 ## Tech
@@ -54,4 +55,4 @@ Images load at runtime from NASA's Image and Video Library API with credit shown
 ## Roadmap
 - **Now:** interactive mission experience
 - **Next:** test with students and teachers
-- **Then:** Bangla language, more missions, teacher mode, classroom activities, expanded archive
+- **Then:** expert review of Bangla text, more missions, teacher mode, classroom activities, expanded archive
