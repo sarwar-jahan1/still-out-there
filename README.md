@@ -20,9 +20,10 @@ An interactive storytelling and STEM learning website (ages ~10–14) about inac
 - First-person stories with a **Listen** button (browser SpeechSynthesis)
 - Science cards, "How did I work?" machine diagram, animated timelines
 - Special sections: laser to the Moon, Spirit planned-vs-actual, "Listen to Mars" (illustration only), Surveyor 3 → Apollo 12
-- Mission Check quiz with confetti, badges and progress saved in localStorage (no login)
+- Games instead of a quiz: **Find the machine** (clue + hint on the map), **Build / Repair the machine** (matching, Spirit is labelled an educational simulation), **aim-and-fire Laser to the Moon**, **simulated Marsquake** (P and S waves)
+- **ORBIT**, a friendly guide with predefined tips (no AI, no API), and a **Mission Backpack** of collected items
+- Badges and progress saved in localStorage (no login)
 - Searchable/filterable mission archive, light/dark mode, responsive layout, reduced-motion support
-- **English / বাংলা toggle** in the navbar (UI + all four missions; Bangla text needs review by a Bangla speaker)
 - Optional generated ambient sound (not a real space recording)
 
 ## Tech
@@ -55,4 +56,4 @@ Images load at runtime from NASA's Image and Video Library API with credit shown
 ## Roadmap
 - **Now:** interactive mission experience
 - **Next:** test with students and teachers
-- **Then:** expert review of Bangla text, more missions, teacher mode, classroom activities, expanded archive
+- **Then:** more missions, teacher mode, classroom activities, expanded archive
