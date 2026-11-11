@@ -75,3 +75,7 @@ img,svg,canvas{max-width:100%}
 @keyframes drive{from{transform:translateX(-40px)}to{transform:translateX(40px)}}
 .shake{animation:shake .4s}
 @keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+.fadein{animation:fadeUp .5s ease-out}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.glowline{filter:drop-shadow(0 0 4px #5fd4e8)}

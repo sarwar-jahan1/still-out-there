@@ -3,9 +3,9 @@
 **Listen. Explore. Learn. Remember.**
 *Some machines stopped working. Their stories didn't.*
 
-An interactive storytelling and STEM learning website (ages ~10–14) about inactive NASA machines on the Moon and Mars. Built for the **NASA Space Apps Challenge**.
+An interactive storytelling and STEM game site (ages ~10–14) about inactive NASA machines on the Moon and Mars, built for the **NASA Space Apps Challenge 2026** ("Abandoned but not Forgotten").
 
-> This project is **not endorsed by NASA**. Mission facts are based on NASA mission pages and must be re-verified before submission.
+> Not endorsed by NASA. Mission facts follow NASA/JPL sources linked on each mission page. Games and waveforms are **educational simulations**, not real data.
 
 ## Team: VU_Aphelion
 - **Mome Ashrafe** (Team Leader)
@@ -13,21 +13,20 @@ An interactive storytelling and STEM learning website (ages ~10–14) about inac
 - Isfar Hosssian
 - Aktaruzzamman Rifat
 
-## Features
-- Cinematic hero (Mars → Moon fade, cursor depth, orbit ring) and animated star field
-- Mission Explorer: Moon/Mars planets with clickable mission pins
-- Four missions: Apollo 11 Retroreflector, Surveyor 3, Spirit, InSight
-- First-person stories with a **Listen** button (browser SpeechSynthesis)
-- Science cards, "How did I work?" machine diagram, animated timelines
-- Special sections: laser to the Moon, Spirit planned-vs-actual, "Listen to Mars" (illustration only), Surveyor 3 → Apollo 12
-- Games instead of a quiz: **Find the machine** (clue + hint on the map), **Build / Repair the machine** (matching, Spirit is labelled an educational simulation), **aim-and-fire Laser to the Moon**, **simulated Marsquake** (P and S waves)
-- **ORBIT**, a friendly guide with predefined tips (no AI, no API), and a **Mission Backpack** of collected items
-- Badges and progress saved in localStorage (no login)
-- Searchable/filterable mission archive, light/dark mode, responsive layout, reduced-motion support
-- Optional generated ambient sound (not a real space recording)
+## What is inside
+- Cinematic hero, animated star field, Moon/Mars explorer with clickable pins and a **Find the machine** clue game
+- 4 missions: Apollo 11 Retroreflector, Surveyor 3, Spirit, InSight
+- Short first-person story chapters, Listen button, 2 NASA photos and a real NASA video per mission (loaded from the NASA Image and Video Library API, with credit)
+- One game per mission, with score, stars, best score and "challenge a friend":
+  - Apollo 11: **Bounce the Laser** (mirror puzzle)
+  - Surveyor 3: **Surveyor Camera** (photo safari)
+  - Spirit: **Rover Rally** (runner) and **Build the Rover** (drag and drop)
+  - InSight: **Marsquake Rush** (tap the quakes, avoid wind)
+- **ORBIT** guide (predefined tips, no AI), Mission Backpack, badges, ranks, progress (localStorage, no login)
+- Mission Detective clue game, search/filter archive, light/dark mode, responsive, reduced-motion support
 
 ## Tech
-Next.js 14 (App Router), JavaScript/JSX only, Tailwind CSS, DaisyUI, React. No backend, no database, no authentication.
+Next.js 14 (App Router), JavaScript/JSX only, Tailwind CSS, DaisyUI, React. No backend, database or authentication.
 
 ## Run
 ```bash
@@ -39,21 +38,20 @@ Deploys directly to Vercel.
 
 ## Structure
 ```
-app/            pages (home, missions, mission/[id], about, credits)
-components/     Navbar, Stage, StarField, Explorer, MissionCard, MissionView,
-                MissionSystem, Laser, Seismic, Quiz, Confetti, Progress, NasaImage ...
-data/missions.js  all mission content (data-driven)
-lib/progress.js   localStorage progress + badges
-lib/nasa.js       optional NASA Image API loader
+app/         pages: home, missions, mission/[id], backpack, about, credits
+components/ UI, games (BounceLaser, SurveyorCamera, RoverRally, BuildMachine, MarsWhack), Orbit, Explorer ...
+data/missions.js   all mission content (add a mission by copying an object)
+lib/         i18n.js (all text), progress.js, scores.js, nasa.js (NASA API loaders)
 ```
 
-## Add a new mission
-Copy an object in `data/missions.js` and edit it (`id`, `planet`, `pin:{x,y}`, `story`, `facts`, `timeline`, `components`, `quiz`, `sources`, plus `nasaId` or `imageQuery` for the image). Cards, pins, page and quiz appear automatically.
+## Add a mission
+Copy an object in `data/missions.js` and edit it (`id`, `planet`, `pin`, `story`, `facts`, `timeline`, `components`, `sources`, `gallery`, `videoQuery`). Add its clue/reward text in `lib/i18n.js`.
 
-## Images and credits
-Images load at runtime from NASA's Image and Video Library API with credit shown under each image. If a wrong image appears, set that mission's `nasaId`. If loading fails, a placeholder is shown.
+## Notes
+- NASA images/videos are searched by name; if a wrong one appears, set a `nasaId` in the mission's `gallery`.
+- Best scores are stored on the player's own device only.
 
 ## Roadmap
 - **Now:** interactive mission experience
 - **Next:** test with students and teachers
-- **Then:** more missions, teacher mode, classroom activities, expanded archive
+- **Then:** more missions, teacher mode, classroom activities, Bangla and other languages, expanded archive
