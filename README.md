@@ -9,9 +9,9 @@ An interactive storytelling and STEM game site (ages ~10–14) about inactive NA
 
 ## Team: VU_Aphelion
 - **Mome Ashrafe** (Team Leader)
-- Md. Sarwar
-- Isfar Hosssian
-- Aktaruzzamman Rifat
+- MD Sarwar Jahan
+- Isfar Hossain
+- MD Aktarruzzaman
 
 ## What is inside
 - Cinematic hero, animated star field, Moon/Mars explorer with clickable pins and a **Find the machine** clue game
@@ -46,6 +46,18 @@ lib/         i18n.js (all text), progress.js, scores.js, nasa.js (NASA API loade
 
 ## Add a mission
 Copy an object in `data/missions.js` and edit it (`id`, `planet`, `pin`, `story`, `facts`, `timeline`, `components`, `sources`, `gallery`, `videoQuery`). Add its clue/reward text in `lib/i18n.js`.
+
+## Data used
+- **NASA Image and Video Library API** (https://images.nasa.gov): mission photos and videos, loaded at runtime with credit shown.
+- **NASA / JPL mission reports and pages** (linked on each mission page): dates and facts for Apollo 11, Surveyor 3, Spirit and InSight.
+- **NIST, "The Moon and Back in 2.5 Seconds"** (https://www.nist.gov/history/moon-and-back-25-seconds): Apollo 11 retroreflector facts.
+- No other space agency data. All game physics, waveforms and puzzles are original educational simulations, not real data.
+
+## Use of AI
+Claude (Anthropic) was used as a coding and writing assistant: it helped write the Next.js code and games, draft the simple first-person story text, and look up sources. No AI-generated images, video or audio are used. The ambient sound is generated in the browser with the Web Audio API, and narration uses the browser's built-in SpeechSynthesis.
+
+## License
+MIT, see LICENSE.
 
 ## Notes
 - NASA images/videos are searched by name; if a wrong one appears, set a `nasaId` in the mission's `gallery`.
